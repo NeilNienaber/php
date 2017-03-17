@@ -1,8 +1,10 @@
 #!groovy
 
 pipeline {
-  sh 'echo TEST'
+  node {
+      sh 'echo TEST'
   sh 'mkdir test'
+  }
   agent { docker 'php' }
   stages {
     stage('build') {
